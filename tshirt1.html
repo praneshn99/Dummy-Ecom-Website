@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Puma - Alpha by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Layouts</a>
+								<ul>
+									<li><a href="generic.html">Generic</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li><a href="elements.html">Elements</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option One</a></li>
+											<li><a href="#">Option Two</a></li>
+											<li><a href="#">Option Three</a></li>
+											<li><a href="#">Option Four</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button">Sign Up</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+
+            <section id="main" class="container medium">
+                <h2>T-Shirts</h2>
+              
+                <div class="row gtr-50 gtr-uniform">
+                  <div class="col-6">
+                    <a href="#">
+                      <img src="images/tshirts/1.jpeg" alt="Product Image" width="100%">
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <div class="product-details">
+                        <h3 style="font-weight: bold; color: black;">Puma</h3>
+                        <p style="margin-bottom: 0; color: black;">Regular fit Tshirt (Black)</p>
+                        <p style="color: black;">$29.99</p>
+              
+                      <div class="size-selection" style="margin: 1rem 0;">
+                        <label for="size">Size:</label>
+                        <select id="size">
+                          <option value="S">Small</option>
+                          <option value="M">Medium</option>
+                          <option value="L">Large</option>
+                          <option value="XL">Extra Large</option>
+                        </select>
+                      </div>
+
+                      <div class="quantity-section">
+                        <label for="quantity">Quantity:</label>
+                        <select id="quantity">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                      
+                      <div style="margin: 1rem 0;">
+                      <a href="#" class="button style1" id="addToCartBtn">Add to Cart</a>
+                      </div>
+                      <ul class="product-info">
+                        <li>100% Original Products</li>
+                        <li>Pay on delivery might be available</li>
+                        <li>Easy 14 days returns and exchanges</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              
+              </section>
+              
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+            <!-- Add to Cart -->
+            <script>
+                
+                const addToCartBtn = document.getElementById('addToCartBtn');
+            
+                addToCartBtn.addEventListener('click', () => {
+                    console.log('worked')
+                  //const productName = document.querySelector('.product-details h4').textContent.trim(); // Get product name
+                  const quantity = parseInt(document.getElementById('quantity').value); // Get quantity
+            
+                  window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({
+                    'event': 'add_to_cart',
+                    'item_name': 'Regular fit Tshirt (Black)',
+                    'item_id': '1',
+                    'item_brnad': 'Puma',
+                    'quantity': quantity,
+                    'price': '$29.99'
+                    // You can add additional product data here like 'item_id', 'price', etc.
+                  });
+            
+                  // Add your cart functionality here (e.g., displaying a message, adding to cart storage)
+                });
+              </script>
+
+	</body>
+</html>
