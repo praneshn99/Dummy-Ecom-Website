@@ -55,6 +55,57 @@
   </div>
 </div>
 
+<!-- Purchase Button -->
+<button type="button" class="purchase-button" data-toggle="modal" data-target="#confirmationModal">Purchase</button>
+
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationModalLabel">Confirm Purchase</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to proceed with the purchase?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" id="purchaseNowButton" class="btn btn-primary">Purchase Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.purchase-button {
+  background-color: #3498db;  /* Blue background color */
+  color: #fff;                 /* White text color */
+  font-weight: bold;           /* Bold text */
+  text-align: center;          /* Center-aligned text */
+  border: none;                /* Remove border */
+  border-radius: 5px;          /* Slightly rounded edges */
+  padding: 10px 20px;          /* Adjust padding for desired button size */
+  cursor: pointer;            /* Indicate interactivity */
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;  /* Hover and press animations */
+}
+
+.purchase-button:hover {
+  background-color: #2980b9;   /* Slight color change on hover */
+}
+
+.purchase-button:active {
+  transform: scale(0.98);      /* Press animation (scale down slightly) */
+}
+</style>
+
+<script>
+document.getElementById('purchaseNowButton').addEventListener('click', function() {
+  window.location.href = "purchase.html";
+});
+</script>
+
 <script>
 function getCookie(name) {
   let cookieArr = document.cookie.split(";");
