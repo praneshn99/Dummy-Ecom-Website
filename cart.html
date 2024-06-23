@@ -1,97 +1,280 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Product Page</title>
-<style>
-  .product {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  .product img {
-    max-width: 100%;
-    height: auto;
-  }
-  .add-to-cart {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-</style>
+    <title>Cart - Alpha by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .cart-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .cart-item p {
+            margin: 5px 0;
+        }
+        .cart-item-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .checkout-button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 1.2em;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
 </head>
-<body>
-<div class="product">
-  <h2>Product 1</h2>
-  <img src="product1.jpg" alt="Product 1 Image">
-  <p>Description for Product 1.</p>
-  <button class="add-to-cart" onclick="addToCart('123','Product 1',10)">Add to Cart</button>
-</div>
+<body class="is-preload">
+    <div id="page-wrapper">
 
-<div class="product">
-  <h2>Product 2</h2>
-  <img src="product2.jpg" alt="Product 2 Image">
-  <p>Description for Product 2.</p>
-  <button class="add-to-cart" onclick="addToCart('456','Product 2',20)">Add to Cart</button>
-</div>
+        <!-- Header -->
+        <header id="header" class="alt" style="background-color: #333; color: #fff;">
+            <h1 style="font-size: x-large;">
+                <a href="index.html">P&R Fashion</a>
+            </h1>
+        
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="#" class="icon solid fa-angle-down">Clothing</a>
+                        <ul>
+                            <li><a href="jeans.html">Jeans</a></li>
+                            <li><a href="tshirts.html">T-shirts</a></li>
+                            <li><a href="jackets.html">Jackets</a></li>
+                            <li>
+                                <a href="#">Shoes</a>
+                                <ul>
+                                    <li><a href="#">Sneakers</a></li>
+                                    <li><a href="#">Sports</a></li>
+                                    <li><a href="#">Formal</a></li>
+                                    <li><a href="#">Slippers</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="cart.html"><i class="fa fa-shopping-cart"></i>&nbsp;Cart</a>
+                    </li>
+                    <li><a href="#" class="button">Sign Up</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Main -->
+        <section id="main" class="container medium">
+            <h2>Shopping Cart</h2>
+        
+            <div id="cartItems">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
 
-<div class="product">
-  <h2>Product 3</h2>
-  <img src="product3.jpg" alt="Product 3 Image">
-  <p>Description for Product 3.</p>
-  <button class="add-to-cart" onclick="addToCart('789','Product 3',30)">Add to Cart</button>
-</div>
+            <div id="cartTotal" style="font-weight: bold; font-size: 1.2em; margin-top: 20px;">
+                Total: $0.00
+            </div>
 
-<hr>
-<a href="cart2.html">2nd Page</a>
-<script>
-/*function addToCart(ID,Name,Price){
-  alert("Product with ID " + ID + " is called " + Name + " and is priced at " + Price + ".");
-}*/
- 
-function getCookie(name) {
-  let cookieArr = document.cookie.split(";");
-  for(let i = 0; i < cookieArr.length; i++) {
-    let cookiePair = cookieArr[i].split("=");
-    if(name == cookiePair[0].trim()) {
-      return decodeURIComponent(cookiePair[1]);
-    }
-  }
-  return null;
-}
+            <div id="checkoutButtonContainer">
+                <!-- Checkout/Login button will be dynamically inserted here -->
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer id="footer">
+            <ul style="display: flex; list-style: none; padding: 0; justify-content: center; font-size: 2rem;">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            </ul>
+            
+            <ul class="copyright">
+                <li style="display: flex; align-items: center; justify-content: center;">
+                    <i class="fa fa-copyright" style="color: #e89980"></i> &copy; Untitled. All rights reserved.
+                </li>
+                <li style="display: flex; align-items: center; justify-content: center;">
+                    Design: <a href="index.html" style="color: #e89980;">P&R Fashion</a>
+                </li>
+            </ul>
+            
+        </footer>
+    </div>
 
-function setCookie(name, value, days) {
-  let expires = "";
-  if (days) {
-    let date = new Date();
-    date.setTime(date.getTime() + (days*24*60*60*1000));
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + value + expires + "; path=/";
-}
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalText">Some text in the Modal..</p>
+        </div>
+    </div>
 
-function addToCart(productId, productName, productPrice) {
-  let cart = getCookie('cart') ? JSON.parse(getCookie('cart')) : {};
-  if(cart[productId]) {
-    cart[productId].quantity += 1;
-  } else {
-    cart[productId] = {
-      name: productName,
-      price: productPrice,
-      quantity: 1
-    };
-  }
-  setCookie('cart', JSON.stringify(cart), 7);
-}
+    <!-- Scripts -->
+    <script>
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days*24*60*60*1000));
+            const expires = "expires="+ d.toUTCString();
+            document.cookie = name + "=" + JSON.stringify(value) + ";" + expires + ";path=/";
+        }
 
+        function getCookie(name) {
+            let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            if (match) return JSON.parse(match[2]);
+            return null;
+        }
 
-</script>
+        function updateCartItemQuantity(item_id, change) {
+            let cartData = getCookie('cart_data');
+            const itemIndex = cartData.findIndex(item => item.item_id === item_id);
+            if (itemIndex > -1) {
+                cartData[itemIndex].quantity += change;
+                if (cartData[itemIndex].quantity <= 0) {
+                    cartData.splice(itemIndex, 1);
+                    showModal('Item removed from cart');
+                }
+                setCookie('cart_data', cartData, 7);
+                loadCart();
+            }
+        }
+
+        function removeCartItem(item_id) {
+            let cartData = getCookie('cart_data');
+            cartData = cartData.filter(item => item.item_id !== item_id);
+            setCookie('cart_data', cartData, 7);
+            showModal('Item removed from cart');
+            loadCart();
+        }
+
+        function showModal(message) {
+            const modal = document.getElementById('modal');
+            const modalText = document.getElementById('modalText');
+            const span = document.getElementsByClassName('close')[0];
+
+            modalText.innerText = message;
+            modal.style.display = "block";
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+        function loadCart() {
+            let cartItems = getCookie('cart_data');
+            let cartContainer = document.getElementById('cartItems');
+            let total = 0;
+
+            cartContainer.innerHTML = '';
+
+            if (!cartItems || cartItems.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            cartItems.forEach(item => {
+                if (item.event === 'add_to_cart') {
+                    let itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <div>
+                            <h3>${item.item_name}</h3>
+                            <p>Brand: ${item.item_brand}</p>
+                            <p>Quantity: ${item.quantity}</p>
+                            <p>Price: $${item.price.toFixed(2)}</p>
+                            <div class="cart-item-buttons">
+                                <button onclick="updateCartItemQuantity('${item.item_id}', 1)">+</button>
+                                <button onclick="updateCartItemQuantity('${item.item_id}', -1)">-</button>
+                                <button onclick="removeCartItem('${item.item_id}')">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                    cartContainer.appendChild(itemElement);
+                    total += item.quantity * item.price;
+                }
+            });
+
+            document.getElementById('cartTotal').textContent = 'Total: $' + total.toFixed(2);
+            
+        }
+
+        function updateCheckoutButton() {
+            const checkoutButtonContainer = document.getElementById('checkoutButtonContainer');
+            const hashedPassword = document.cookie.includes('hashedPassword');
+            let button;
+
+            if (hashedPassword) {
+                button = `<a href="checkout.html" class="checkout-button">Checkout</a>`;
+            } 
+            if ((hashedPassword == true) & (document.cookie.includes('cart_data') == false)) {
+              button = `<a href="tshirts.html" class="checkout-button">Visit Catalog</a>`;
+            }
+            else {
+                button = `<a href="login.html" class="checkout-button">Login</a>`;
+            }
+
+            checkoutButtonContainer.innerHTML = button;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCart, updateCheckoutButton());
+    </script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
 </html>
