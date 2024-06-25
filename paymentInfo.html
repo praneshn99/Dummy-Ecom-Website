@@ -106,22 +106,26 @@
         
         <!-- Main -->
         <section id="main" class="container medium">
-            <h2>Shopping Cart</h2>
-        
-            <div id="cartItems">
-                <!-- Cart items will be dynamically inserted here -->
-            </div>
-
+            <h2>Please Add Payment Details</h2>
+          
+            <form id="paymentForm" action="purchase.html" style="margin-top: 20px;">
+              <label for="paymentType">Payment Type:</label>
+              <select id="paymentType" name="paymentType" style="padding: 5px; margin-right: 10px;">
+                <option value="card">Card</option>
+                <option value="upi">UPI</option>
+                <option value="bankTransfer">Bank Transfer</option>
+                <option value="cashOnDelivery">Cash on Delivery</option>
+              </select>
+          
+              <br/>
+              <button type="submit" style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;">Submit Payment</button>
+            </form>
+          
             <div id="cartTotal" style="font-weight: bold; font-size: 1.2em; margin-top: 20px;">
-                Total: $0.00
+              Total: $0.00
             </div>
-            <br><br><br>
-            <div id="checkoutButtonContainer">
-                <a href="shippingInfo.html" style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;">Begin Checkout</a>
-              </div>
-              
-              
-        </section>
+          </section>
+          
         
         <!-- Footer -->
         <footer id="footer">
@@ -156,120 +160,7 @@
     </div>
 
     <!-- Scripts -->
-    <script>
-        function setCookie(name, value, days) {
-            const d = new Date();
-            d.setTime(d.getTime() + (days*24*60*60*1000));
-            const expires = "expires="+ d.toUTCString();
-            document.cookie = name + "=" + JSON.stringify(value) + ";" + expires + ";path=/";
-        }
 
-        function getCookie(name) {
-            let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-            if (match) return JSON.parse(match[2]);
-            return null;
-        }
-
-        function updateCartItemQuantity(item_id, change) {
-            let cartData = getCookie('cart_data');
-            const itemIndex = cartData.findIndex(item => item.item_id === item_id);
-            if (itemIndex > -1) {
-                cartData[itemIndex].quantity += change;
-                if (cartData[itemIndex].quantity <= 0) {
-                    cartData.splice(itemIndex, 1);
-                    showModal('Item removed from cart');
-                }
-                setCookie('cart_data', cartData, 7);
-                loadCart();
-            }
-        }
-
-        function removeCartItem(item_id) {
-            let cartData = getCookie('cart_data');
-            cartData = cartData.filter(item => item.item_id !== item_id);
-            setCookie('cart_data', cartData, 7);
-            showModal('Item removed from cart');
-            loadCart();
-        }
-
-        function showModal(message) {
-            const modal = document.getElementById('modal');
-            const modalText = document.getElementById('modalText');
-            const span = document.getElementsByClassName('close')[0];
-
-            modalText.innerText = message;
-            modal.style.display = "block";
-
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        }
-
-        function loadCart() {
-            let cartItems = getCookie('cart_data');
-            let cartContainer = document.getElementById('cartItems');
-            let total = 0;
-
-            cartContainer.innerHTML = '';
-
-            if (!cartItems || cartItems.length === 0) {
-                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-                return;
-            }
-
-            cartItems.forEach(item => {
-                if (item.event === 'add_to_cart') {
-                    let itemElement = document.createElement('div');
-                    itemElement.classList.add('cart-item');
-                    itemElement.innerHTML = `
-                        <div>
-                            <h3>${item.item_name}</h3>
-                            <p>Brand: ${item.item_brand}</p>
-                            <p>Quantity: ${item.quantity}</p>
-                            <p>Price: $${item.price.toFixed(2)}</p>
-                            <div class="cart-item-buttons">
-                                <button onclick="updateCartItemQuantity('${item.item_id}', 1)">+</button>
-                                <button onclick="updateCartItemQuantity('${item.item_id}', -1)">-</button>
-                                <button onclick="removeCartItem('${item.item_id}')">Remove</button>
-                            </div>
-                        </div>
-                    `;
-                    cartContainer.appendChild(itemElement);
-                    total += item.quantity * item.price;
-                }
-            });
-
-            document.getElementById('cartTotal').textContent = 'Total: $' + total.toFixed(2);
-            
-        }
-/*
-        function updateCheckoutButton() {
-            const checkoutButtonContainer = document.getElementById('checkoutButtonContainer');
-            const hashedPassword = document.cookie.includes('hashedPassword');
-            let button;
-
-            if (hashedPassword) {
-                button = `<a href="checkout.html" class="checkout-button">Checkout</a>`;
-            } 
-            if ((hashedPassword == true) & (document.cookie.includes('cart_data') == false)) {
-              button = `<a href="tshirts.html" class="checkout-button">Visit Catalog</a>`;
-            }
-            else {
-                button = `<a href="login.html" class="checkout-button">Login</a>`;
-            }
-
-            checkoutButtonContainer.innerHTML = button;
-        }
-
-        document.addEventListener('DOMContentLoaded', loadCart, updateCheckoutButton());
- */
- </script>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
