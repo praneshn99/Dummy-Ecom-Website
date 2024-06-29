@@ -31,12 +31,12 @@
 </head>
 <body class="is-preload">
     <div id="page-wrapper">
-
+        
         <!-- Header -->
         <header id="header">
             <h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
         </header>
-
+        
         <!-- Main -->
         <section id="main" class="container">
             <div class="login-container">
@@ -54,7 +54,7 @@
                 </form>
             </div>
         </section>
-
+        
         <!-- Footer -->
         <footer id="footer">
             <ul class="icons">
@@ -69,25 +69,31 @@
                 <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </footer>
-
+        
     </div>
-
+    
     <!-- Include CryptoJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script>
         function sha256(message) {
             return CryptoJS.SHA256(message).toString(CryptoJS.enc.Hex);
         }
-
+        
         document.getElementById("login-form").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent form submission
-
+            
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
-
+            
             // Hash the password
             const hashedPassword = sha256(username + password);
-
+            window.dataLayer = window.dataLayer || [];
+            
+            // Push the login event to the data layer
+            window.dataLayer.push({
+                'event': 'login',
+                'userId': hashedPassword
+            });
             // Set the hashed password as a cookie (adjust expiration as needed)
             document.cookie = `hashedPassword=${hashedPassword}; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/`;
             window.location.href = "checkout.html";

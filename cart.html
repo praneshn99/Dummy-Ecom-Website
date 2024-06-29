@@ -224,7 +224,7 @@
             }
 
             cartItems.forEach(item => {
-                if (item.event === 'add_to_cart') {
+                if (item.item_category === 'Apparel') {
                     let itemElement = document.createElement('div');
                     itemElement.classList.add('cart-item');
                     itemElement.innerHTML = `
@@ -248,7 +248,7 @@
             document.getElementById('cartTotal').textContent = 'Total: $' + total.toFixed(2);
             
         }
-/*
+
         function updateCheckoutButton() {
             const checkoutButtonContainer = document.getElementById('checkoutButtonContainer');
             const hashedPassword = document.cookie.includes('hashedPassword');
@@ -268,7 +268,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', loadCart, updateCheckoutButton());
- */
+ 
  </script>
 
     <script src="assets/js/jquery.min.js"></script>

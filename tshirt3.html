@@ -131,18 +131,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     
     function setCookie(name, value, days) {
       const d = new Date();
-      d.setTime(d.getTime() + (days*24*60*60*1000));
-      const expires = "expires="+ d.toUTCString();
+      d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + d.toUTCString();
       document.cookie = name + "=" + value + ";" + expires + ";path=/";
     }
     
     function getCookie(name) {
       const nameEQ = name + "=";
       const ca = document.cookie.split(';');
-      for(let i=0; i < ca.length; i++) {
+      for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
       }
       return null;
     }
@@ -160,7 +160,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
       } else {
         // Product not in cart, add new product
         const newProduct = {
-          'event': 'add_to_cart',
           'item_name': viewItemData.item_name,
           'item_id': viewItemData.item_id,
           'item_brand': viewItemData.item_brand,
@@ -186,24 +185,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
       cartData = addProductToCart(cartData, viewItemData);
       
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push(...cartData.map(product => ({
+      window.dataLayer.push({
         'event': 'add_to_cart',
-        'item_name': product.item_name,
-        'item_id': product.item_id,
-        'item_brand': product.item_brand,
-        'item_category': product.item_category,
-        'item_category2': product.item_category2,
-        'item_category3': product.item_category3,
-        'item_variant': product.item_variant,
-        'quantity': product.quantity,
-        'price': product.price,
-        'currency': product.currency
-      })));
+        'item_name': viewItemData.item_name,
+        'item_id': viewItemData.item_id,
+        'item_brand': viewItemData.item_brand,
+        'item_category': viewItemData.item_category,
+        'item_category2': viewItemData.item_category2,
+        'item_category3': viewItemData.item_category3,
+        'item_variant': viewItemData.item_variant,
+        'quantity': viewItemData.quantity ? viewItemData.quantity + 1 : 1, // Account for quantity increment
+        'price': viewItemData.price,
+        'currency': viewItemData.currency
+      });
       
-      setCookie('cart_data', JSON.stringify(cartData), 7); // Set cookie with updated cart data, expires in 7 days
-      
-      // Optionally update the displayed quantity
-      // document.getElementById('quantity').textContent = cartData.reduce((total, product) => total + product.quantity, 0);
+      setCookie('cart_data', JSON.stringify(cartData), 1); // Set cookie with updated cart data, expires in 1 day
     });
     
   </script>
