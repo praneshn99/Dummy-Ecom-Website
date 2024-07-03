@@ -1,8 +1,19 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Cart - Alpha by HTML5 UP</title>
     <meta charset="utf-8" />
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M34QDXDD');</script>
+    <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="styles.css">
@@ -11,18 +22,22 @@
             border-bottom: 1px solid #ddd;
             padding: 10px 0;
         }
+
         .cart-item h3 {
             margin: 0;
             font-size: 1.2em;
         }
+
         .cart-item p {
             margin: 5px 0;
         }
+
         .cart-item-buttons {
             display: flex;
             gap: 10px;
             margin-top: 10px;
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -32,10 +47,11 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
             padding-top: 60px;
         }
+
         .modal-content {
             background-color: #fefefe;
             margin: 5% auto;
@@ -43,18 +59,21 @@
             border: 1px solid #888;
             width: 80%;
         }
+
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
         }
+
         .close:hover,
         .close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
         }
+
         .checkout-button {
             display: block;
             margin-top: 20px;
@@ -67,7 +86,12 @@
         }
     </style>
 </head>
+
 <body class="is-preload">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M34QDXDD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="page-wrapper">
 
         <!-- Header -->
@@ -75,7 +99,7 @@
             <h1 style="font-size: x-large;">
                 <a href="index.html">P&R Fashion</a>
             </h1>
-        
+
             <nav id="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -103,11 +127,11 @@
                 </ul>
             </nav>
         </header>
-        
+
         <!-- Main -->
         <section id="main" class="container medium">
             <h2>Shopping Cart</h2>
-        
+
             <div id="cartItems">
                 <!-- Cart items will be dynamically inserted here -->
             </div>
@@ -117,34 +141,32 @@
             </div>
             <br><br><br>
             <div id="checkoutButtonContainer">
-                <a href="shippingInfo.html" style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;">Begin Checkout</a>
-              </div>
-              
-              
+                <a href="shippingInfo.html"
+                    style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;">Begin
+                    Checkout</a>
+            </div>
+
+
         </section>
-        
+
         <!-- Footer -->
-        <footer id="footer">
-            <ul style="display: flex; list-style: none; padding: 0; justify-content: center; font-size: 2rem;">
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-                <li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-            </ul>
-            
-            <ul class="copyright">
-                <li style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fa fa-copyright" style="color: #e89980"></i> &copy; Untitled. All rights reserved.
-                </li>
-                <li style="display: flex; align-items: center; justify-content: center;">
-                    Design: <a href="index.html" style="color: #e89980;">P&R Fashion</a>
-                </li>
-            </ul>
-            
-        </footer>
+		<footer id="footer">
+			<ul style="display: flex; list-style: none; padding: 0; justify-content: center; font-size: 2rem; margin-bottom: auto;">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+			</ul>
+
+			<ul class="copyright">
+				<li style="display: flex; align-items: center; justify-content: center;">
+					<i class="fa fa-copyright" style="color: #e89980"></i> &nbsp; P&R Fashion. All rights reserved.
+				</li>
+			</ul>
+		</footer>
     </div>
 
     <!-- Modal -->
@@ -159,8 +181,8 @@
     <script>
         function setCookie(name, value, days) {
             const d = new Date();
-            d.setTime(d.getTime() + (days*24*60*60*1000));
-            const expires = "expires="+ d.toUTCString();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
             document.cookie = name + "=" + JSON.stringify(value) + ";" + expires + ";path=/";
         }
 
@@ -200,11 +222,11 @@
             modalText.innerText = message;
             modal.style.display = "block";
 
-            span.onclick = function() {
+            span.onclick = function () {
                 modal.style.display = "none";
             }
 
-            window.onclick = function(event) {
+            window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
@@ -246,7 +268,7 @@
             });
 
             document.getElementById('cartTotal').textContent = 'Total: $' + total.toFixed(2);
-            
+
         }
 
         function updateCheckoutButton() {
@@ -256,9 +278,9 @@
 
             if (hashedPassword) {
                 button = `<a href="checkout.html" class="checkout-button">Checkout</a>`;
-            } 
+            }
             if ((hashedPassword == true) & (document.cookie.includes('cart_data') == false)) {
-              button = `<a href="tshirts.html" class="checkout-button">Visit Catalog</a>`;
+                button = `<a href="tshirts.html" class="checkout-button">Visit Catalog</a>`;
             }
             else {
                 button = `<a href="login.html" class="checkout-button">Login</a>`;
@@ -268,8 +290,8 @@
         }
 
         document.addEventListener('DOMContentLoaded', loadCart, updateCheckoutButton());
- 
- </script>
+
+    </script>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
@@ -280,4 +302,5 @@
     <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>

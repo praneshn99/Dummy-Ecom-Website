@@ -5,31 +5,79 @@ html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
 <head>
     <title>Checkout - Alpha by HTML5 UP</title>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M34QDXDD');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
         /* Styles for the checkout tabs and forms */
-        .tabs { display: flex; cursor: pointer; margin-bottom: 20px; }
-        .tab { flex: 1; padding: 10px; background: #f1f1f1; text-align: center; }
-        .tab.active { background: #ddd; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; }
-        .form-group input, .form-group select { width: 100%; padding: 8px; box-sizing: border-box; }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            background: #f1f1f1;
+            text-align: center;
+        }
+
+        .tab.active {
+            background: #ddd;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
     </style>
 </head>
+
 <body class="is-preload">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M34QDXDD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="page-wrapper">
-        
+
         <!-- Header -->
         <header id="header">
             <h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
         </header>
-        
+
         <!-- Main -->
         <section id="main" class="container">
             <header>
@@ -43,48 +91,52 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="tab" data-tab="net-banking">Net Banking</div>
                     <div class="tab" data-tab="emi">EMIs</div>
                 </div>
-                
+
                 <!-- Tab contents -->
                 <div id="credit-card" class="tab-content active">
-                        <a href="receipt.html?paymentMethod=CreditCard" class="button primary">Pay Now with Credit Card</a>
+                    <a href="receipt.html?paymentMethod=CreditCard" class="button primary">Pay Now with Credit Card</a>
                 </div>
-                
+
                 <div id="net-banking" class="tab-content">
-                        <a href="receipt.html?paymentMethod=NetBanking" class="button primary">Pay Now Net Banking</a>
+                    <a href="receipt.html?paymentMethod=NetBanking" class="button primary">Pay Now Net Banking</a>
                 </div>
-                
+
                 <div id="emi" class="tab-content">
-                        <a href="receipt.html?paymentMethod=EMI" class="button primary">Pay Now with EMI</a>
+                    <a href="receipt.html?paymentMethod=EMI" class="button primary">Pay Now with EMI</a>
                 </div>
             </div>
         </section>
-        
+
         <!-- Footer -->
-        <footer id="footer">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-                <li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </footer>
-        
+		<footer id="footer">
+			<ul style="display: flex; list-style: none; padding: 0; justify-content: center; font-size: 2rem; margin-bottom: auto;">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+			</ul>
+
+			<ul class="copyright">
+				<li style="display: flex; align-items: center; justify-content: center;">
+					<i class="fa fa-copyright" style="color: #e89980"></i> &nbsp; P&R Fashion. All rights reserved.
+				</li>
+			</ul>
+		</footer>
+
     </div>
-    
+
     <!-- Scripts -->
-    <script> 
+    <script>
         // Function to get a cookie by name
         function getCookie(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
         }
-        
+
         // Function to parse the 'cart_data' cookie
         function getCartData() {
             const cartDataCookie = getCookie('cart_data');
@@ -97,7 +149,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             }
             return [];
         }
-        
+
         // Function to push data to the data layer
         function pushToDataLayer(cartItems) {
             window.dataLayer = window.dataLayer || [];
@@ -108,9 +160,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 }
             });
         }
-        
+
         // Main function to execute the tasks
-        (function() {
+        (function () {
             const cartItems = getCartData();
             if (cartItems.length > 0) {
                 pushToDataLayer(cartItems);
@@ -118,7 +170,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 alert('Cart is Empty!');
             }
         })();
-        
+
     </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
@@ -130,14 +182,15 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <script>
         // JavaScript for tabs
         document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', function() {
+            tab.addEventListener('click', function () {
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
-                
+
                 this.classList.add('active');
                 document.getElementById(this.dataset.tab).classList.add('active');
             });
         });
     </script>
 </body>
+
 </html>
