@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Login - P&R Fashion</title>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M34QDXDD');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Login Page</title>
@@ -12,6 +24,7 @@
         body {
             background-color: #f8f9fa;
         }
+
         .login-container {
             max-width: 400px;
             margin: 0 auto;
@@ -20,23 +33,30 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         .login-container h1 {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .form-group {
             margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body class="is-preload">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M34QDXDD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="page-wrapper">
-        
+
         <!-- Header -->
         <header id="header">
-            <h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
+            <h1><a href="index.html">P&R Fashion</a></h1>
         </header>
-        
+
         <!-- Main -->
         <section id="main" class="container">
             <div class="login-container">
@@ -44,17 +64,19 @@
                 <form id="login-form">
                     <div class="form-group">
                         <label for="username">Username:</label>
-                        <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
+                        <input type="text" id="username" class="form-control" placeholder="Enter your username"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password"
+                            required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
                 </form>
             </div>
         </section>
-        
+
         <!-- Footer -->
         <footer id="footer">
             <ul class="icons">
@@ -66,29 +88,30 @@
                 <li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
             </ul>
             <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </footer>
-        
+
     </div>
-    
+
     <!-- Include CryptoJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script>
         function sha256(message) {
             return CryptoJS.SHA256(message).toString(CryptoJS.enc.Hex);
         }
-        
+
         document.getElementById("login-form").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent form submission
-            
+
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
-            
+
             // Hash the password
             const hashedPassword = sha256(username + password);
             window.dataLayer = window.dataLayer || [];
-            
+
             // Push the login event to the data layer
             window.dataLayer.push({
                 'event': 'login',
@@ -106,4 +129,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
