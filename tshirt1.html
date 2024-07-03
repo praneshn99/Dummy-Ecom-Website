@@ -7,7 +7,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <html>
 
 <head>
-  <title>Puma - Alpha by HTML5 UP</title>
+  <title>Puma - P&R Fashion</title>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -98,23 +98,24 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     </section>
 
     <!-- Footer -->
-		<footer id="footer">
-			<ul style="display: flex; list-style: none; padding: 0; justify-content: center; font-size: 2rem; margin-bottom: auto;">
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-				<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-			</ul>
+    <footer id="footer">
+      <ul
+        style="display: flex; list-style: none; padding: 0; justify-content: center; font-size: 2rem; margin-bottom: auto;">
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+        <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+        <li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+      </ul>
 
-			<ul class="copyright">
-				<li style="display: flex; align-items: center; justify-content: center;">
-					<i class="fa fa-copyright" style="color: #e89980"></i> &nbsp; P&R Fashion. All rights reserved.
-				</li>
-			</ul>
-		</footer>
+      <ul class="copyright">
+        <li style="display: flex; align-items: center; justify-content: center;">
+          <i class="fa fa-copyright" style="color: #e89980"></i> &nbsp; P&R Fashion. All rights reserved.
+        </li>
+      </ul>
+    </footer>
   </div>
 
   <!-- Scripts -->
@@ -123,15 +124,20 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'view_item',
-      'item_id': "SKU_00001", // Replace with unique ID for Puma product
-      'item_name': "Puma Regular fit Tshirt (Black)",
-      'item_brand': "Puma",
-      'item_category': "Apparel",
-      'item_category2': "Men",
-      'item_category3': "T-Shirts",
-      'item_variant': "Black",
-      'price': 29.99,
-      'currency': "USD" // Optional
+      'ecommerce': {
+        'items': [
+          {
+            'item_id': "SKU_00001", // Replace with unique ID for Puma product
+            'item_name': "Puma Regular fit Tshirt (Black)",
+            'item_brand': "Puma",
+            'item_category': "Apparel",
+            'item_category2': "Men",
+            'item_category3': "T-Shirts",
+            'item_variant': "Black",
+            'price': 29.99,
+            'currency': "USD" // Optional
+          }]
+      }
     });
   </script>
   <script src="assets/js/jquery.min.js"></script>
