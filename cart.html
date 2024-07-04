@@ -140,7 +140,7 @@
                 Total: $0.00
             </div>
             <br><br><br>
-            <div id="checkoutButtonContainer">
+            <div>
                 <a href="shippingInfo.html"
                     style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;">Begin
                     Checkout</a>
@@ -271,7 +271,7 @@
 
         }
 
-        function updateCheckoutButton() {
+      /*  function updateCheckoutButton() {
             const checkoutButtonContainer = document.getElementById('checkoutButtonContainer');
             const hashedPassword = document.cookie.includes('hashedPassword');
             let button;
@@ -287,9 +287,9 @@
             }
 
             checkoutButtonContainer.innerHTML = button;
-        }
+        }*/
 
-        document.addEventListener('DOMContentLoaded', loadCart, updateCheckoutButton());
+        document.addEventListener('DOMContentLoaded', loadCart);
 
     </script>
 

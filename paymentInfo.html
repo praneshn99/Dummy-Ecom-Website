@@ -143,7 +143,7 @@
 
                 <br />
                 <button type="submit"
-                    style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;">Submit
+                    style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;" id="makePayment">Submit
                     Payment</button>
             </form>
 
@@ -191,6 +191,48 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+            
+            
+            // Function to parse the 'cart_data' cookie
+            function getCartData() {
+                const cartDataCookie = getCookie('cart_data');
+                if (cartDataCookie) {
+                    try {
+                        return JSON.parse(cartDataCookie);
+                    } catch (e) {
+                        console.error('Error parsing cart_data cookie:', e);
+                    }
+                }
+                return [];
+            }
+            
+            var itemsCookie = getCookie('cart_data');
+            var items = itemsCookie ? JSON.parse(itemsCookie) : [];
+            const cartItems = getCartData();
+            
+            document.getElementById('makePayment').addEventListener('click', function(event) {
+                event.preventDefault();
+                var paymentName = document.getElementById('paymentName').value;
+                
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'add_payment_info',
+                    ecommerce: {
+                        payment_type: paymentName,
+                        items: cartItems
+                    }
+                });
+                
+                // Submit the form after pushing to dataLayer
+                document.getElementById('paymemtForm').submit();
+            });
+    </script>
 
 </body>
 

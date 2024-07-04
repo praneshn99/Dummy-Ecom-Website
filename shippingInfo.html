@@ -5,13 +5,13 @@
     <title>Shipping - P&R Fashion</title>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-M34QDXDD');</script>
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M34QDXDD');</script>
     <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -22,58 +22,16 @@
             border-bottom: 1px solid #ddd;
             padding: 10px 0;
         }
-
+        
         .cart-item h3 {
             margin: 0;
             font-size: 1.2em;
         }
-
+        
         .cart-item p {
             margin: 5px 0;
         }
-
-        .cart-item-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
+        
         .checkout-button {
             display: block;
             margin-top: 20px;
@@ -90,121 +48,167 @@
 <body class="is-preload">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M34QDXDD" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div id="page-wrapper">
-
-        <!-- Header -->
-        <header id="header" class="alt" style="background-color: #333; color: #fff;">
-            <h1 style="font-size: x-large;">
-                <a href="index.html">P&R Fashion</a>
-            </h1>
-
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li>
-                        <a href="#" class="icon solid fa-angle-down">Clothing</a>
-                        <ul>
-                            <li><a href="jeans.html">Jeans</a></li>
-                            <li><a href="tshirts.html">T-shirts</a></li>
-                            <li><a href="jackets.html">Jackets</a></li>
-                            <li>
-                                <a href="#">Shoes</a>
-                                <ul>
-                                    <li><a href="#">Sneakers</a></li>
-                                    <li><a href="#">Sports</a></li>
-                                    <li><a href="#">Formal</a></li>
-                                    <li><a href="#">Slippers</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="cart.html"><i class="fa fa-shopping-cart"></i>&nbsp;Cart</a>
-                    </li>
-                    <li><a href="#" class="button">Sign Up</a></li>
+        style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div id="page-wrapper">
+            
+            <!-- Header -->
+            <header id="header" class="alt" style="background-color: #333; color: #fff;">
+                <h1 style="font-size: x-large;">
+                    <a href="index.html">P&R Fashion</a>
+                </h1>
+                
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="#" class="icon solid fa-angle-down">Clothing</a>
+                            <ul>
+                                <li><a href="jeans.html">Jeans</a></li>
+                                <li><a href="tshirts.html">T-shirts</a></li>
+                                <li><a href="jackets.html">Jackets</a></li>
+                                <li>
+                                    <a href="#">Shoes</a>
+                                    <ul>
+                                        <li><a href="#">Sneakers</a></li>
+                                        <li><a href="#">Sports</a></li>
+                                        <li><a href="#">Formal</a></li>
+                                        <li><a href="#">Slippers</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="cart.html"><i class="fa fa-shopping-cart"></i>&nbsp;Cart</a>
+                        </li>
+                        <li><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <!-- Main -->
+            <section id="main" class="container medium">
+                <h2>Please Add Shipping Details</h2>
+                
+                <form id="shippingForm" action="paymentInfo.html" style="margin-top: 20px;">
+                    <label for="shippingName">Name:</label>
+                    <input type="text" id="shippingName" name="shippingName" style="padding: 5px; margin-right: 10px;" required>
+                    
+                    <br />
+                    
+                    <label for="shippingAddress">Address:</label>
+                    <textarea id="shippingAddress" name="shippingAddress" style="width: 100%; padding: 5px;" rows="4" required></textarea>
+                    
+                    <br />
+                    
+                    <label for="shippingCountry">Country:</label>
+                    <select id="shippingCountry" name="shippingCountry" style="padding: 5px; margin-right: 10px;" required>
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                    </select>
+                    
+                    <br />
+                    <button type="submit" id="continueToPayment" style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;">Continue to Payment</button>
+                </form>
+                
+                <div id="cartTotal" style="font-weight: bold; font-size: 1.2em; margin-top: 20px;">
+                    Total: $0.00
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer id="footer">
+                <ul style="display: flex; list-style: none; padding: 0; justify-content: center; font-size: 2rem; margin-bottom: auto;">
+                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                    <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                    <li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
                 </ul>
-            </nav>
-        </header>
-
-        <!-- Main -->
-        <section id="main" class="container medium">
-            <h2>Please Add Shipping Details</h2>
-
-            <form id="shippingForm" action="paymentInfo.html" style="margin-top: 20px;">
-                <label for="shippingName">Name:</label>
-                <input type="text" id="shippingName" name="shippingName" style="padding: 5px; margin-right: 10px;"
-                    required>
-
-                <br />
-
-                <label for="shippingAddress">Address:</label>
-                <textarea id="shippingAddress" name="shippingAddress" style="width: 100%; padding: 5px;" rows="4"
-                    required></textarea>
-
-                <br />
-
-                <label for="shippingCountry">Country:</label>
-                <select id="shippingCountry" name="shippingCountry" style="padding: 5px; margin-right: 10px;" required>
-                    <option value="">Select Country</option>
-                    <option value="US">United States</option>
-                    <option value="CA">Canada</option>
-                    <option value="UK">United Kingdom</option>
-                </select>
-
-                <br />
-                <button type="submit"
-                    style="background-color: #333; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer;">Continue
-                    to Payment</button>
-            </form>
-
-            <div id="cartTotal" style="font-weight: bold; font-size: 1.2em; margin-top: 20px;">
-                Total: $0.00
-            </div>
-        </section>
-
-
-
-        <!-- Footer -->
-		<footer id="footer">
-			<ul style="display: flex; list-style: none; padding: 0; justify-content: center; font-size: 2rem; margin-bottom: auto;">
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-				<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-			</ul>
-
-			<ul class="copyright">
-				<li style="display: flex; align-items: center; justify-content: center;">
-					<i class="fa fa-copyright" style="color: #e89980"></i> &nbsp; P&R Fashion. All rights reserved.
-				</li>
-			</ul>
-		</footer>
-    </div>
-
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="modalText">Some text in the Modal..</p>
+                
+                <ul class="copyright">
+                    <li style="display: flex; align-items: center; justify-content: center;">
+                        <i class="fa fa-copyright" style="color: #e89980"></i> &nbsp; P&R Fashion. All rights reserved.
+                    </li>
+                </ul>
+            </footer>
         </div>
-    </div>
-
-    <!-- Scripts -->
-
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+        
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modalText">Some text in the Modal..</p>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        
+        <!-- Data Layer Push Script -->
+        <script>
+            
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+            
+            
+            // Function to parse the 'cart_data' cookie
+            function getCartData() {
+                const cartDataCookie = getCookie('cart_data');
+                if (cartDataCookie) {
+                    try {
+                        return JSON.parse(cartDataCookie);
+                    } catch (e) {
+                        console.error('Error parsing cart_data cookie:', e);
+                    }
+                }
+                return [];
+            }
+            
+            var itemsCookie = getCookie('cart_data');
+            var items = itemsCookie ? JSON.parse(itemsCookie) : [];
+            const cartItems = getCartData();
+            
+            document.getElementById('continueToPayment').addEventListener('click', function(event) {
+                event.preventDefault();
+                var shippingName = document.getElementById('shippingName').value;
+                var shippingAddress = document.getElementById('shippingAddress').value;
+                var shippingCountry = document.getElementById('shippingCountry').value;
+                var shippingMethod = 'FedEx'; // Example value, change as needed
+                var shippingCost = 10.00; // Example value, change as needed
+                var deliveryTime = '3-5 business days'; // Example value, change as needed
+                
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'add_shipping_info',
+                    ecommerce: {
+                        shipping_name: shippingName,
+                        shipping_address: shippingAddress,
+                        shipping_country: shippingCountry,
+                        shipping_tier: shippingMethod,
+                        shipping_cost: shippingCost,
+                        delivery_time: deliveryTime,
+                        items: cartItems
+                    }
+                });
+                
+                // Submit the form after pushing to dataLayer
+                document.getElementById('shippingForm').submit();
+            });
+        </script>
+    </body>
+    
+    </html>
